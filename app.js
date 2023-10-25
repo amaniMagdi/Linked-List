@@ -1,11 +1,6 @@
 const LinkedList = require('./LinkedList')
 
-const ll = new LinkedList()
-ll.insertAtHead(10)
-ll.insertAtHead(20)
-
-console.log(ll)
-console.log(ll)
-
+const ll = LinkedList.fromValues(10,20)
+ll.print()
 
 
