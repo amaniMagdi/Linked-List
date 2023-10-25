@@ -17,13 +17,21 @@ class LinkedList {
     return current;
   }
   print() {
-    let current = this.head
-    let output = ''
-    while(current){
-      output = `${output}${current.value}->`
-      current = current.next
+    let current = this.head;
+    let output = "";
+    while (current) {
+      output = `${output}${current.value}->`;
+      current = current.next;
     }
-    console.log(`${output}null`)
+    console.log(`${output}null`);
+  }
+  insertAtIndex(index, value) {
+    if (index == 0) return this.insertAtHead(value);
+    //previous value is the dominant here as its normal the next value to be null.
+    const prev = this.getByIndex(index - 1);
+    if (prev == null) return null;
+    prev.next = new LinkedListNode(value, prev.next)
+    this.length++
   }
 }
 
