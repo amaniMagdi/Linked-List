@@ -33,6 +33,10 @@ class LinkedList {
     prev.next = new LinkedListNode(value, prev.next)
     this.length++
   }
+  removeHead(){
+    this.head = this.head.next
+    this.length--
+  }
 }
 
 class LinkedListNode {
